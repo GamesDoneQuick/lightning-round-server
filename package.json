@@ -1,0 +1,24 @@
+{
+  "name": "lightning-round-server",
+  "version": "1.0.0",
+  "description": "The server-side portion of GDQ's Twitter question harvesting system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "convict": "^1.5.0",
+    "firebase": "^3.6.3",
+    "firebase-admin": "^4.0.4",
+    "twemoji": "^2.2.0",
+    "twitter": "^1.5.0",
+    "winston": "^2.3.0",
+    "winston-daily-rotate-file": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.0",
+    "eslint-config-xo": "^0.17.0"
+  }
+}
