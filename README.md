@@ -4,6 +4,9 @@ The server-side component of [lightning-round](https://github.com/GamesDoneQuick
 ## Hm?
 [lightning-round](https://github.com/GamesDoneQuick/lightning-round) is a "serverless" [Firebase](https://www.firebase.com/) app for harvesting and moderating questions from Twitter to use in our interviews. Firebase is neat and often has everything that you'd need to build a slick webapp with no server code or infrastructure. However, since we need to interact with the Twitter API to harvest replies, we must have our own arbitrary server code running somewhere, feeding those replies into Firebase. That's what this app does.
 
+## Screenshot
+![Preview Screenshot](https://i.imgur.com/c2sOgmT.png)
+
 ## What exactly does it do?
 It monitors the value of `active_tweet_id` in Firebase, which is set by the client-side app (`lightning-round`). When this ID changes, this server app fetches that tweet from the Twitter API, then begins polling for replies to that tweet every 10 seconds. It adds the tweet and its replies back into Firebase, available at `/tweets` and `/tweets/${tweet_id_str}/replies`.
 
