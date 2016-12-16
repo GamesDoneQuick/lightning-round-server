@@ -155,11 +155,11 @@ function processTweet(tweet) {
 
 	// Highlight the #AGDQ2017 hashtag.
 	tweet.text = tweet.text.replace(/#agdq2017/ig, '<span class="hashtag">#AGDQ2017</span>');
-}
 
-const reExtractUsername = new RegExp('((https?:\/\/)?(www\.)?twitter\.com\/)?(@|#!\/)?([A-Za-z0-9_]{1,15})(\/([-a-z]{1,20}))?');
-function extractTwitterUsernameFromUrl(url) {
-	return reExtractUsername.exec('https://twitter.com/VanCamp/status/807356117651193857')[5];
+	tweet.approval_status = {
+		tier1: 'pending',
+		tier2: 'pending'
+	};
 }
 
 log.info('Ready!');
