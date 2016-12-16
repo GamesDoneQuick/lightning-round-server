@@ -145,6 +145,11 @@ function fetchLatestReplies(promptTweet) {
 }
 
 function processTweet(tweet) {
+	// Remove the leading `@gamesdonequick`
+	if (tweet.text.startsWith('@GamesDoneQuick') || tweet.text.startsWith('@gamesdonequick')) {
+		tweet.text = tweet.text.replace('@GamesDoneQuick', '').trim();
+	}
+
 	// Parse emoji.
 	tweet.text = twemoji.parse(tweet.text);
 
