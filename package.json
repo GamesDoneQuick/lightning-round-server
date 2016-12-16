@@ -4,7 +4,8 @@
   "description": "The server-side portion of GDQ's Twitter question harvesting system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "static": "eslint .",
+    "test": "npm run static"
   },
   "author": "",
   "license": "ISC",

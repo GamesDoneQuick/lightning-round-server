@@ -46,6 +46,7 @@ database.ref('active_tweet_id').on('value', snapshot => {
 
 	// If this is "const", it will eventually throw ReferenceErrors saying "listener is not defined" when
 	// we try to remove the listener in the callback. I have no idea why. Might be an ES6 bug or edge case.
+	// eslint-disable-next-line no-var
 	var listener = ref.on('value', snapshot => {
 		const promptTweet = snapshot.val();
 
