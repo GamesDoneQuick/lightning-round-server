@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 'use strict';
 
-
 // Make Heroku happy
 require('http').createServer((req, res) => {
 	res.writeHead(200);
