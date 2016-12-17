@@ -1,6 +1,13 @@
 /* eslint-disable camelcase */
 'use strict';
 
+
+// Make Heroku happy
+require('http').createServer((req, res) => {
+	res.writeHead(200);
+	res.end('hello world\n');
+}).listen(process.env.PORT || 8001);
+
 const log = require('./lib/log');
 const POLL_INTERVAL = 10000;
 const admin = require('firebase-admin');
