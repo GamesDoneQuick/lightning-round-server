@@ -6,10 +6,13 @@ const POLL_INTERVAL = 10000;
 const admin = require('firebase-admin');
 const twemoji = require('twemoji');
 const config = require('./lib/config');
-const serviceAccount = require('./credentials.json');
 admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount),
-	databaseURL: 'https://lightning-round.firebaseio.com'
+	credential: admin.credential.cert({
+		project_id: config.get('firebase.projectId'),
+		client_email: config.get('firebase.clientEmail'),
+		private_key: config.get('firebase.privateKey')
+	}),
+	databaseURL: config.get('firebase.databaseURL')
 });
 
 const Twitter = require('twitter');
