@@ -49,6 +49,7 @@ jspm_packages
 .yarn-integrity
 
 credentials.json
+firebase-credentials.json
 config.json
 
 # JetBrains IDEs (IntelliJ/WebStorm)
