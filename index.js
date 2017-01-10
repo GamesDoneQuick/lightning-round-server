@@ -105,7 +105,7 @@ tweetsRef.on('child_added', snapshot => {
 	// Get the full tweet that this ID refers to.
 	twitter.get(`statuses/show/${promptTweetId}`, (error, promptTweet) => {
 		if (error) {
-			console.error(error);
+			console.error('Error getting prompt tweet:\n\t', error);
 			return;
 		}
 
@@ -131,7 +131,7 @@ function fetchLatestReplies(promptTweet) {
 		since_id: promptTweet.max_search_id_str ? promptTweet.max_search_id_str : promptTweet.id_str
 	}, (error, results) => {
 		if (error) {
-			console.error();
+			console.error('Error fetching replies to prompt tweet:\n\t', error);
 			return;
 		}
 
