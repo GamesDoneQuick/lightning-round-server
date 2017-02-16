@@ -1,6 +1,6 @@
 # lightning-round-server [![CircleCI](https://circleci.com/gh/GamesDoneQuick/lightning-round-server.svg?style=svg)](https://circleci.com/gh/GamesDoneQuick/lightning-round-server)
-The server-side component of [lightning-round](https://github.com/GamesDoneQuick/lightning-round); handles dealing with the Twitter API to harvest replies automatically.  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  
+The server-side component of [lightning-round](https://github.com/GamesDoneQuick/lightning-round); handles dealing with the Twitter API to harvest replies automatically.  
 
 ## Hm?
 [lightning-round](https://github.com/GamesDoneQuick/lightning-round) is a "serverless" [Firebase](https://www.firebase.com/) app for harvesting and moderating questions from Twitter to use in our interviews. Firebase is neat and often has everything that you'd need to build a slick webapp with no server code or infrastructure. However, since we need to interact with the Twitter API to harvest replies, we must have our own arbitrary server code running somewhere, feeding those replies into Firebase. That's what this app does.
