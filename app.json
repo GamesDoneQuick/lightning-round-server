@@ -1,0 +1,45 @@
+{
+	"name": "lightning-round-server",
+	"description": "The server-side component of Lightning Round; handles dealing with the Twitter API to harvest replies automatically.",
+	"repository": "https://github.com/GamesDoneQuick/lightning-round-server",
+	"keywords": [
+		"node",
+		"twitter",
+		"gdq",
+		"gamesdonequick",
+		"interview",
+		"questions"
+	],
+	"formation": {
+		"worker": {
+			"quantity": 1,
+			"size": "free"
+		}
+	},
+	"env": {
+		"FIREBASE_CLIENT_EMAIL": {
+			"description": "Your Firebase app's client email. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
+		},
+		"FIREBASE_DATABASE_URL": {
+			"description": "Your Firebase app's database URL. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
+		},
+		"FIREBASE_PRIVATE_KEY": {
+			"description": "Your Firebase app's private key. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
+		},
+		"FIREBASE_PROJECT_ID": {
+			"description": "Your Firebase app's project ID. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
+		},
+		"TWITTER_ACCESS_TOKEN_KEY": {
+			"description": "Your Twitter app's access token key. Get this from the \"Keys and Access Tokens\" tab of your app on https://apps.twitter.com/"
+		},
+		"TWITTER_ACCESS_TOKEN_SECRET": {
+			"description": "Your Twitter app's access token secret. Get this from the \"Keys and Access Tokens\" tab of your app on https://apps.twitter.com/"
+		},
+		"TWITTER_CONSUMER_KEY": {
+			"description": "Your Twitter app's consumer key. Get this from the \"Keys and Access Tokens\" tab of your app on https://apps.twitter.com/"
+		},
+		"TWITTER_CONSUMER_SECRET": {
+			"description": "Your Twitter app's consumer secret. Get this from the \"Keys and Access Tokens\" tab of your app on https://apps.twitter.com/"
+		}
+	}
+}
