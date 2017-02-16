@@ -19,6 +19,9 @@ The workaround I went with was to poll the [`search/tweets`](https://dev.twitter
 Whenever `active_tweet_id` is changed by a client, this server app changes its `search/tweets` polling target.
 
 ## Installation
+The easiest route is to click the "Deploy to Heroku" button at the top of this README.
+
+Or, you can install `lightning-round-server` manually:
 ```
 git clone git@github.com:GamesDoneQuick/lightning-round-server.git
 cd lightning-round-server
@@ -27,6 +30,9 @@ npm install
 
 ## Configuration
 I'll be honest, configuration for this isn't as ergonomic as it could be but whatever.
+
+If you deployed this app to Heroku using the button above, you will enter your Firebase and Twitter
+credentials into Heroku as environment variables instead of putting them into config files.
 
 1. Make an app on Firebase, if you don't already have one: https://console.firebase.google.com/. 
  - The free tier is fine.
