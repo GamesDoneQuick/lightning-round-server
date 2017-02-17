@@ -18,6 +18,10 @@ The workaround I went with was to poll the [`search/tweets`](https://dev.twitter
 
 Whenever `active_tweet_id` is changed by a client, this server app changes its `search/tweets` polling target.
 
+It is very important that you only ever have **one instance of lightning-round-server running at a time** for any given
+Firebase app. It was _not_ written to handle trying to fight against another instance operating on the same database, and
+it _will_ explode.
+
 ## Installation
 The easiest route is to click the "Deploy to Heroku" button at the top of this README.
 
