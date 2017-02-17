@@ -17,11 +17,11 @@
 		}
 	},
 	"env": {
+		"FIREBASE_DATABASE_URL": {
+			"description": "Your Firebase app's database URL. Get this from the \"Overview\" page of your Firebase console, and click \"Add Firebase to your web app\""
+		},
 		"FIREBASE_CLIENT_EMAIL": {
 			"description": "Your Firebase app's client email. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
-		},
-		"FIREBASE_DATABASE_URL": {
-			"description": "Your Firebase app's database URL. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
 		},
 		"FIREBASE_PRIVATE_KEY": {
 			"description": "Your Firebase app's private key. Get this from the JSON file downloaded from the \"Service Accounts\" tab in your app's settings."
