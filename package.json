@@ -23,8 +23,8 @@
     "winston-daily-rotate-file": "^1.4.0"
   },
   "devDependencies": {
-    "eslint": "^3.12.0",
-    "eslint-config-xo": "^0.17.0"
+    "eslint": "^3.19.0",
+    "eslint-config-xo": "^0.18.2"
   },
   "eslintConfig": {
     "extends": "xo/esnext"
