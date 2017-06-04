@@ -39,19 +39,19 @@ If you deployed this app to Heroku using the button above, you will enter your F
 credentials into Heroku as environment variables instead of putting them into config files.
 
 1. Make an app on Firebase, if you don't already have one: https://console.firebase.google.com/. 
- - The free tier is fine.
+	- The free tier is fine.
 2. Look in the "Authentication" settings and enable Twitter sign-in. All other sign-in providers should be disabled.
- - You could _maybe_ use some other sign-in provider, but this was specifically made with only Twitter sign-in in mind.
+	- You could _maybe_ use some other sign-in provider, but this was specifically made with only Twitter sign-in in mind.
 2. Go to your app's settings (there should be a gear in the top left, click "Project Settings"), select the "Service Accounts" tab and click "Generate New Private Key" to download a JSON file containing your Firebase Admin SDK credentials. Save this file as `lightning-round-server/credentials.json`.
-  - These credentials let this server app ignore all the database permissions and make any changes to the database we want. This way, we have data the no client can alter, but that the server is still free to manage.
+	- These credentials let this server app ignore all the database permissions and make any changes to the database we want. This way, we have data the no client can alter, but that the server is still free to manage.
 3. Create a Twitter API app, if you haven't already made one: https://apps.twitter.com/
- - You can set the app's permissions to "read only".
- - From the "Settings" tab, you'll want to provide a "Privacy Policy URL" and a "Terms of Service URL". Having these lets you then go to the "Permissions" tab and check "Request email addresses from users".
+	- You can set the app's permissions to "read only".
+	- From the "Settings" tab, you'll want to provide a "Privacy Policy URL" and a "Terms of Service URL". Having these lets you then go to the "Permissions" tab and check "Request email addresses from users".
 4. From the "Keys and Access Tokens" tab, save these four things:
-  1. Consumer Key
-  2. Consumer Secret
-  3. Access Token
-  4. Access Token Secret
+	1. Consumer Key
+	2. Consumer Secret
+	3. Access Token
+	4. Access Token Secret
 5. Create `lightning-round-server/config.json` in the following format
 
     ```json
