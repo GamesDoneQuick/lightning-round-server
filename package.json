@@ -25,5 +25,8 @@
   "devDependencies": {
     "eslint": "^3.12.0",
     "eslint-config-xo": "^0.17.0"
+  },
+  "eslintConfig": {
+    "extends": "xo/esnext"
   }
 }
