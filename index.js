@@ -8,7 +8,7 @@ require('http').createServer((req, res) => {
 }).listen(process.env.PORT || 8001);
 
 const log = require('./lib/log');
-const POLL_INTERVAL = 10000;
+const POLL_INTERVAL = 15000;
 const admin = require('firebase-admin');
 const twemoji = require('twemoji');
 const config = require('./lib/config');
