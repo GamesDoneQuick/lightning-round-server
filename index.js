@@ -155,10 +155,8 @@ function fetchLatestReplies(promptTweet) {
 }
 
 function processTweet(tweet) {
-	// Remove the leading `@gamesdonequick`
-	if (tweet.text.startsWith('@GamesDoneQuick') || tweet.text.startsWith('@gamesdonequick')) {
-		tweet.text = tweet.text.replace('@GamesDoneQuick', '').trim();
-	}
+	// Remove the leading `@gamesdonequick`, if any (case insensitive)
+	tweet.text = tweet.text.replace(/^@gamesdonequick/gi, '').trim();
 
 	// Parse emoji.
 	tweet.text = twemoji.parse(tweet.text);
