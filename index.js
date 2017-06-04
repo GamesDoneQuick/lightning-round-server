@@ -161,8 +161,8 @@ function processTweet(tweet) {
 	// Parse emoji.
 	tweet.text = twemoji.parse(tweet.text);
 
-	// Highlight the #AGDQ2017 hashtag.
-	tweet.text = tweet.text.replace(/#agdq2017/ig, '<span class="hashtag">#AGDQ2017</span>');
+	// Highlight the #SGDQ2017 hashtag.
+	tweet.text = tweet.text.replace(/#sgdq2017/ig, '<span class="hashtag">#SGDQ2017</span>');
 
 	tweet.approval_status = {
 		tier1: 'pending',
