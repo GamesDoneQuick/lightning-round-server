@@ -43,7 +43,7 @@ credentials into Heroku as environment variables instead of putting them into co
 2. Look in the "Authentication" settings and enable Twitter sign-in. All other sign-in providers should be disabled.
 	- You could _maybe_ use some other sign-in provider, but this was specifically made with only Twitter sign-in in mind.
 2. Go to your app's settings (there should be a gear in the top left, click "Project Settings"), select the "Service Accounts" tab and click "Generate New Private Key" to download a JSON file containing your Firebase Admin SDK credentials. Save this file as `lightning-round-server/credentials.json`.
-	- These credentials let this server app ignore all the database permissions and make any changes to the database we want. This way, we have data the no client can alter, but that the server is still free to manage.
+	- These credentials let this server app ignore all the database permissions and make any changes to the database we want. This way, we have data that no client can alter, but that the server is still free to manage.
 3. Create a Twitter API app, if you haven't already made one: https://apps.twitter.com/
 	- You can set the app's permissions to "read only".
 	- From the "Settings" tab, you'll want to provide a "Privacy Policy URL" and a "Terms of Service URL". Having these lets you then go to the "Permissions" tab and check "Request email addresses from users".
