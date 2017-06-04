@@ -64,5 +64,5 @@ credentials into Heroku as environment variables instead of putting them into co
       }
     }
     ```
-(Alternatively, you could provide these as environment variables or command-line arguments. See [`lib/config.js`](https://github.com/GamesDoneQuick/lightning-round-server/blob/master/lib/config.js) for those parameter names.)
+	(Alternatively, you could provide these as environment variables or command-line arguments. See [`lib/config.js`](https://github.com/GamesDoneQuick/lightning-round-server/blob/master/lib/config.js) for those parameter names.)
 7. Run the program with `node index.js`.
