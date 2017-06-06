@@ -7,11 +7,18 @@ require('http').createServer((req, res) => {
 	res.end('hello world\n');
 }).listen(process.env.PORT || 8001);
 
-const log = require('./lib/log');
-const POLL_INTERVAL = 15000;
+// Packages
 const admin = require('firebase-admin');
 const twemoji = require('twemoji');
+const Twitter = require('twitter');
+
+// Ours
 const config = require('./lib/config');
+const log = require('./lib/log');
+require('./lib/sentry');
+
+const POLL_INTERVAL = 15000;
+
 admin.initializeApp({
 	credential: admin.credential.cert({
 		project_id: config.get('firebase.projectId'),
@@ -21,7 +28,6 @@ admin.initializeApp({
 	databaseURL: config.get('firebase.databaseURL')
 });
 
-const Twitter = require('twitter');
 const twitter = new Twitter({
 	consumer_key: config.get('twitter.consumerKey'),
 	consumer_secret: config.get('twitter.consumerSecret'),
@@ -30,7 +36,6 @@ const twitter = new Twitter({
 });
 
 const database = admin.database();
-
 const tweetsRef = database.ref('tweets');
 let pollRepliesInterval;
 

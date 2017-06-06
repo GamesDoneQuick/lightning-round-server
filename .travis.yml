@@ -1,0 +1,20 @@
+language: node_js
+cache:
+  apt: true
+  directories:
+    - node_modules
+    - '$HOME/.npm'
+node_js:
+  - "7"
+install:
+  - npm install -g sentry-cli-binary
+  - npm install
+before_script:
+  # We must convert the slug to lowercase, which is what ${TRAVIS_REPO_SLUG,,} does.
+  - sentry-cli releases set-commits "$TRAVIS_COMMIT" --commit "${TRAVIS_REPO_SLUG,,}@$TRAVIS_COMMIT"
+  - sentry-cli releases new "$TRAVIS_COMMIT"
+after_success:
+  # Finalize the Sentry release.
+  - sentry-cli releases finalize "$TRAVIS_COMMIT"
+  # Tell Sentry about this new deploy as well.
+  - sentry-cli releases deploys "$TRAVIS_COMMIT" new -e "production"

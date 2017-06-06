@@ -4,8 +4,8 @@
   "description": "The server-side portion of GDQ's Twitter question harvesting system.",
   "main": "index.js",
   "scripts": {
-    "static": "eslint .",
-    "test": "npm run static",
+    "pretest": "eslint .",
+    "test": "echo \"No tests yet.\"",
     "start": "node index.js"
   },
   "engines": {
@@ -22,6 +22,7 @@
     "convict": "^1.5.0",
     "firebase": "^3.6.3",
     "firebase-admin": "^4.0.4",
+    "raven": "^2.0.2",
     "twemoji": "^2.2.0",
     "twitter": "^1.5.0",
     "winston": "^2.3.0",
@@ -36,6 +37,9 @@
     "lib"
   ],
   "eslintConfig": {
-    "extends": "xo/esnext"
+    "extends": "xo/esnext",
+    "rules": {
+      "capitalized-comments": [0]
+    }
   }
 }

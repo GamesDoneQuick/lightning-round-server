@@ -40,6 +40,10 @@
 		},
 		"TWITTER_CONSUMER_SECRET": {
 			"description": "Your Twitter app's consumer secret. Get this from the \"Keys and Access Tokens\" tab of your app on https://apps.twitter.com/"
+		},
+		"SENTRY_DSN": {
+			"description": "Your Sentry.io project DSN, used for error reporting and tracking.",
+			"required": false
 		}
 	}
 }

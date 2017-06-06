@@ -1,5 +1,6 @@
-# lightning-round-server [![CircleCI](https://circleci.com/gh/GamesDoneQuick/lightning-round-server.svg?style=svg)](https://circleci.com/gh/GamesDoneQuick/lightning-round-server)
+# lightning-round-server [![Build Status](https://travis-ci.org/GamesDoneQuick/lightning-round-server.svg?branch=master)](https://travis-ci.org/GamesDoneQuick/lightning-round-server)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  
+
 The server-side component of [lightning-round](https://github.com/GamesDoneQuick/lightning-round); handles dealing with the Twitter API to harvest replies automatically.  
 
 ## Hm?
