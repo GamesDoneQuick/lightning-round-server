@@ -64,12 +64,12 @@ database.ref('active_tweet_id').on('value', snapshot => {
 	var listener = ref.on('value', snapshot => {
 		const promptTweet = snapshot.val();
 
-		if (!promptTweet || promptTweet === 'pending') {
+		if (!promptTweet || promptTweet.pending) {
 			log.debug(`no tweet with ID "${activeTweetId}" exists, will take it once it exists`);
 
 			tweetsRef.child(activeTweetId).transaction(currentTweetData => {
 				if (currentTweetData === null) {
-					return 'pending';
+					return {pending: true};
 				}
 
 				return currentTweetData;
@@ -98,7 +98,8 @@ database.ref('active_tweet_id').on('value', snapshot => {
 // child_added is triggered once for each existing child and then again every time a
 // new child is added to the specified path.
 tweetsRef.on('child_added', snapshot => {
-	if (snapshot.val() !== 'pending') {
+	const val = snapshot.val();
+	if (val && !val.pending) {
 		// This tweet has already been processed, so ignore.
 		return;
 	}
