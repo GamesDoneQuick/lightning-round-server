@@ -126,6 +126,11 @@ tweetsRef.on('child_added', snapshot => {
 });
 
 function fetchLatestReplies(promptTweet) {
+	if (!promptTweet || !promptTweet.user) {
+		log.info('Prompt tweet was falsey, not fetching replies (value: %s)', JSON.stringify(promptTweet));
+		return;
+	}
+
 	log.debug('fetching latest replies for Tweet ID "%s"', promptTweet.id_str);
 	twitter.get('search/tweets', {
 		q: `to:${promptTweet.user.screen_name}`, // only get tweets that were to the user that made the prompt tweet
