@@ -2,19 +2,23 @@ language: node_js
 cache:
   apt: true
   directories:
-    - node_modules
-    - '$HOME/.npm'
+  - node_modules
+  - "$HOME/.npm"
 node_js:
-  - "7"
+- '7'
 install:
-  - npm install -g sentry-cli-binary
-  - npm install
+- npm install -g sentry-cli-binary
+- npm install
 before_script:
-  # We must convert the slug to lowercase, which is what ${TRAVIS_REPO_SLUG,,} does.
-  - sentry-cli releases set-commits "$TRAVIS_COMMIT" --commit "${TRAVIS_REPO_SLUG,,}@$TRAVIS_COMMIT"
-  - sentry-cli releases new "$TRAVIS_COMMIT"
+- sentry-cli releases set-commits "$TRAVIS_COMMIT" --commit "${TRAVIS_REPO_SLUG,,}@$TRAVIS_COMMIT"
+- sentry-cli releases new "$TRAVIS_COMMIT"
 after_success:
-  # Finalize the Sentry release.
-  - sentry-cli releases finalize "$TRAVIS_COMMIT"
-  # Tell Sentry about this new deploy as well.
-  - sentry-cli releases deploys "$TRAVIS_COMMIT" new -e "production"
+- sentry-cli releases finalize "$TRAVIS_COMMIT"
+- sentry-cli releases deploys "$TRAVIS_COMMIT" new -e "production"
+notifications:
+  slack:
+    rooms:
+      secure: he+1oTW6t3PqksMCBD9+5P0gfPfWeY7HGsmjOcb3HPhouP0JRFtqDKFsGtgvMLMbF/kze6pH+HQLnzXzV0TdlbW6RPBX/OFi+gYddLU2+dbIxYq4J4Se1gYPVaqrkOV89sHjCQLBgSj93xK8eVLCkLi4ZG2qdLjOEbPy5Tg8k39434p8KU5Ge+SM+B0EEaaMNUsFp+k5jAEfydMv6zSQoRf19rtmXVTWYgUHLdnmx7VlD9lbp0Vu+wmT0VdmDoaUFDzV5Ii4uoNKmbjzBAO8s/Q2OJC2q/74RgjdsMR9vF/nlG1hPlrTnJGOSBKEWZcpBIpPSyF31W1C8GtRZEfVYX+gzmQunKQmTqqVuzI5UJVL4atJNBNBlvVpiLSLVnhmttx14Qk3B2OFgBA9AkSo9A/W+Ktfegq+AeN2X8jQObpXP3QmTC/XN86w2+I0Cbx2gj5eepNpU8XH4NY/OhwWZK+PF7me3weMHmeWpRWD/1M2EprY1eqdKwGIBzs7sVaKBZYEzTAWKVWozsJJBFHqe9cH39jMqrPG7LPeDhxa999P4g1D8wRO2/3pXbPztngxisYLSLMrZ56Y1Bo0JcXP+WOXsax/Ps663HBNAbYByakff5O53Ey4PI2RH4Oy2b7jbp+w2BkJQteSRjNzr6q5hwlBwp9RPK5wYBvna4+P5d4=
+    on_success: change
+    on_failure: always
+    on_pull_requests: false
