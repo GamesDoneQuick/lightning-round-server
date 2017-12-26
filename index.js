@@ -109,7 +109,7 @@ tweetsRef.on('child_added', snapshot => {
 	const promptTweetId = snapshot.key;
 
 	// Get the full tweet that this ID refers to.
-	twitter.get(`statuses/show/${promptTweetId}`, (error, promptTweet) => {
+	twitter.get(`statuses/show/${promptTweetId}`, {tweet_mode: 'extended'}, (error, promptTweet) => {
 		if (error) {
 			console.error('Error getting prompt tweet:\n\t', error);
 			return;
@@ -136,7 +136,8 @@ function fetchLatestReplies(promptTweet) {
 	twitter.get('search/tweets', {
 		q: `to:${promptTweet.user.screen_name}`, // only get tweets that were to the user that made the prompt tweet
 		count: 100, // max
-		result_type: 'mixed', // a compromise between "recent" and "popular",
+		result_type: 'mixed', // a compromise between "recent" and "popular"
+		tweet_mode: 'extended', // always get the full_text of tweets
 
 		// only get tweets newer than our target tweet
 		since_id: promptTweet.max_search_id_str ? promptTweet.max_search_id_str : promptTweet.id_str
@@ -167,7 +168,7 @@ function fetchLatestReplies(promptTweet) {
 
 function processTweet(tweet) {
 	// Remove the leading `@gamesdonequick`, if any (case insensitive)
-	tweet.text = tweet.text.replace(/^@gamesdonequick/gi, '').trim();
+	tweet.text = (tweet.full_text || tweet.text).replace(/^@gamesdonequick/gi, '').trim();
 
 	// Parse emoji.
 	tweet.text = twemoji.parse(tweet.text);
