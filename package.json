@@ -19,27 +19,21 @@
   },
   "license": "MIT",
   "dependencies": {
-    "convict": "^1.5.0",
-    "firebase": "^3.6.3",
-    "firebase-admin": "^4.0.4",
-    "raven": "^2.0.2",
-    "twemoji": "^2.2.0",
-    "twitter": "^1.5.0",
-    "winston": "^2.3.0",
-    "winston-daily-rotate-file": "^1.4.0"
+    "convict": "^4.2.0",
+    "firebase": "^5.0.1",
+    "firebase-admin": "^5.12.0",
+    "raven": "^2.6.0",
+    "twemoji": "^2.5.1",
+    "twitter": "^1.7.1",
+    "winston": "^2.4.2",
+    "winston-daily-rotate-file": "^3.1.3"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-xo": "^0.18.2"
+    "eslint": "^4.19.1",
+    "eslint-config-xo": "^0.22.1"
   },
   "files": [
     "*.js",
     "lib"
-  ],
-  "eslintConfig": {
-    "extends": "xo/esnext",
-    "rules": {
-      "capitalized-comments": [0]
-    }
-  }
+  ]
 }
