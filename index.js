@@ -27,5 +27,6 @@ const database = admin.database();
 
 // Spin up the individual libs.
 require('./lib/tweets')(database);
+require('./lib/users')(admin, database);
 
 log.info('Ready!');
