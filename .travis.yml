@@ -5,7 +5,7 @@ cache:
   - node_modules
   - "$HOME/.npm"
 node_js:
-- '7'
+- '10'
 install:
 - npm install -g sentry-cli-binary
 - npm install
