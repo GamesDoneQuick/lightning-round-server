@@ -10,7 +10,7 @@ install:
 - npm install -g sentry-cli-binary
 - npm install
 before_script:
-- sentry-cli releases set-commits "$TRAVIS_COMMIT" --commit "${TRAVIS_REPO_SLUG,,}@$TRAVIS_COMMIT"
+- sentry-cli releases set-commits "$TRAVIS_COMMIT" --commit "$TRAVIS_REPO_SLUG@$TRAVIS_COMMIT"
 - sentry-cli releases new "$TRAVIS_COMMIT"
 after_success:
 - sentry-cli releases finalize "$TRAVIS_COMMIT"
